@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html ng-app="todo">
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-controller="mainCtrl">
+    <div class="main-container">
+      <div class="todo-container">
+        <h1> Our Todo List </h1>
+        <input placeholder="New Item" ng-model="newItem"><button ng-click="addItem()"> Submit </button>
+        <ul> 
+          <li ng-repeat="task in todos"><span class="remove" ng-click="removeTask($index)"> X </span>{{task.item}} - {{task.date | date}} - {{task.timeCommitment}}</li>
+        </ul>
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/parseHeaders.js"></script>
+    <script src="js/parseService.js"></script>
+  </body>
+</html>
